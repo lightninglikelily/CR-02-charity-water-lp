@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Donate - End the Water Crisis</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Charity Water</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <header class="top-header">
-        <img src="charitywater" alt="Logo" class="logo">
+  <div class="container">
+    <header class="nav-bar">
+      <img src="charitywaterlogo.png" alt="Charity Water Logo" class="logo"/>
+      <nav>
+        <a href="#">Get Involved</a>
+        <a href="#">Our Story</a>
+        <a href="#">Community News</a>
+      </nav>
     </header>
+
     <main>
-        <h1>Join the Generation Ending the Water Crisis</h1>
-        <p>
-            Even a few dollars can help bring clean water to someone in need — and 100% of your donation goes directly to projects on the ground.
-            Be part of a global community of young people who believe in action, honesty, and hope by donating today.
-        </p>
-        <div class="donation-buttons">
-            <button>$10</button>
-            <button>$25</button>
-            <button>$50</button>
+      <div class="content">
+        <h2>Join the <br/>Generation<br/>Ending the<br/>Water Crisis</h2>
+        <p>Even a few dollars can help bring clean water to someone in need — and 100% of your donation goes directly to projects on the ground. Be part of a global community of young people who believe in action, honesty, and hope by donating today.</p>
+
+        <div class="donation-options">
+          <button class="amount-button" data-amount="10">$10</button>
+          <button class="amount-button" data-amount="25">$25</button>
+          <button class="amount-button" data-amount="50">$50</button>
         </div>
-        <nav>
-            <a href="#">Get Involved</a>
-            <a href="#">Our Story</a>
-            <a href="#">Community</a>
-            <a href="#">News</a>
-        </nav>
+        <a href="thankyou.html" class="donate-button">DONATE</a>
+      </div>
+
+      <div class="image-container">
+        <img src="charitywatergirl.jpeg" alt="Smiling Girl" />
+      </div>
     </main>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".amount-button");
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        buttons.forEach(btn => btn.classList.remove("selected"));
+        button.classList.add("selected");
+      });
+    });
+  </script>
 </body>
 </html>
