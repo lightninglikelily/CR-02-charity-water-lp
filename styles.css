@@ -32,6 +32,8 @@ header.nav-bar nav a {
 }
 
 /* === MAIN CONTENT === */
+
+/* Layout for main section: text on left (40%), image on right (60%) */
 main {
   display: flex;
   justify-content: space-between;
@@ -42,6 +44,8 @@ main {
 .content {
   max-width: 50%;
 }
+
+
 
 .content h2 {
   font-size: 3rem;
@@ -88,4 +92,60 @@ main {
   width: 400px;
   height: auto;
   border-radius: 10px;
+}
+
+/* Make the hero image and text each take up half the page */
+.main-hero {
+  display: flex;
+  min-height: 100vh;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 0;
+  gap: 40px; /* Adds space between the two halves */
+}
+
+.hero-text {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.hero-text h2 {
+  font-size: 3vw;
+  margin-bottom: 1vw; /* Less space below heading */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero-text p {
+  font-size: 1.3vw;
+  margin-bottom: 1.5vw;
+  text-align: center;
+  line-height: 1.05; /* More compact lines */
+  max-width: 28em;
+  font-weight: 600;
+}
+
+.hero-image {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+  min-width: 0;
+  min-height: 0;
 }
