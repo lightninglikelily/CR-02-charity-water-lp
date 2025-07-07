@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Charity Water</title>
+  <title>charity: water</title>
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
@@ -28,7 +28,7 @@
           <button class="amount-button" data-amount="25">$25</button>
           <button class="amount-button" data-amount="50">$50</button>
         </div>
-        <a href="thankyou.html" class="donate-button">DONATE</a>
+        <a href="thankyou.html" class="donate-button" id="donateBtn">DONATE</a>
       </section>
       <!-- Right side: big image -->
       <section class="hero-image">
@@ -39,11 +39,20 @@
 
   <script>
     const buttons = document.querySelectorAll(".amount-button");
+    const donateBtn = document.getElementById("donateBtn");
+    let selected = false;
     buttons.forEach(button => {
       button.addEventListener("click", () => {
         buttons.forEach(btn => btn.classList.remove("selected"));
         button.classList.add("selected");
+        selected = true;
       });
+    });
+    donateBtn.addEventListener("click", function(event) {
+      if (!document.querySelector(".amount-button.selected")) {
+        event.preventDefault();
+        alert("Please select a donation amount before continuing.");
+      }
     });
   </script>
 </body>
